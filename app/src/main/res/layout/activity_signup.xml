@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#444444"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="25dp">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="30dp"
+        android:text="@string/inscription"
+        android:textColor="#6dffbf"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/et_user_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/pseudo"
+        android:textAlignment="center"
+        android:textColor="#6bfff7"
+        android:textColorHint="#52afaa" />
+
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/email"
+        android:textAlignment="center"
+        android:textColor="#6bfff7"
+        android:textColorHint="#52afaa" />
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/mot_de_passe"
+        android:inputType="textPassword"
+        android:textAlignment="center"
+        android:textColor="#6bfff7"
+        android:textColorHint="#52afaa" />
+
+    <EditText
+        android:id="@+id/et_confirm_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/confirmer_le_mot_de_passe"
+        android:inputType="textPassword"
+        android:textAlignment="center"
+        android:textColor="#6bfff7"
+        android:textColorHint="#52afaa" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="25dp">
+
+        <TextView
+            android:id="@+id/errorMessage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAlignment="center"
+            android:textColor="#FF0000"
+            tools:text="Error Message" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_subscribe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10sp"
+        android:text="@string/s_inscrire"
+        android:textAllCaps="false" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/alreadyAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textAlignment="center"
+            android:textColor="#6dffbf"
+            android:layout_marginEnd="4sp"
+            android:text="@string/vous_avez_d_ja_un_compte" />
+
+        <TextView
+            android:id="@+id/connectionLink"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textAlignment="center"
+            android:textColor="#0000FF"
+            android:linksClickable="true"
+            android:text="@string/connectez_vous" />
+
+    </LinearLayout>
+
+</LinearLayout>

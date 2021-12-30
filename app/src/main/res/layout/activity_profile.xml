@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#444444"
+    android:orientation="vertical"
+    android:padding="24sp"
+    tools:context=".MainActivity">
+
+    <include layout="@layout/header"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/persoInfos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="@string/informations_personnelles"
+            android:textColor="#6dffbf" />
+
+        <TextView
+            android:id="@+id/profileUserNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/persoInfos"
+            android:textColor="#52afaa"
+            android:layout_marginEnd="4sp"
+            android:text="@string/pseudo_profil" />
+        <TextView
+            android:id="@+id/profileUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#52afaa"
+            android:layout_toEndOf="@id/profileUserNameLabel"
+            android:layout_below="@id/persoInfos"
+            android:text="@string/pseudo"/>
+
+        <TextView
+            android:id="@+id/profileUserEmailLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4sp"
+            android:textColor="#52afaa"
+            android:layout_below="@id/profileUserNameLabel"
+            android:text="@string/adresse_email_profil"/>
+        <TextView
+            android:id="@+id/profileUserEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#52afaa"
+            android:layout_toEndOf="@id/profileUserEmailLabel"
+            android:layout_below="@id/profileUserNameLabel"
+            android:text="@string/email"/>
+        <TextView
+            android:id="@+id/scoreLabel"
+            android:textSize="20sp"
+            android:layout_marginTop="14sp"
+            android:textColor="#6dffbf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/profileUserEmail"
+            android:text="@string/mes_derniers_scores"/>
+
+        <ListView
+            android:id="@+id/listViewProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/scoreLabel">
+
+        </ListView>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1078029051291",
+    "project_id": "myquizandroidkotlin",
+    "storage_bucket": "myquizandroidkotlin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1078029051291:android:2dd7c6885f3dd6202aad3e",
+        "android_client_info": {
+          "package_name": "com.epsi.myquiz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1078029051291-6nvdo8quf5mb45h3rrni6qcqfgnb5ss3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANgFIqSA2bI0m3WpzWVL3SIeHKBRQ9oHI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1078029051291-6nvdo8quf5mb45h3rrni6qcqfgnb5ss3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

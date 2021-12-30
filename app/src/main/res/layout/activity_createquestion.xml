@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#444444"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="25dp">
+
+    <include layout="@layout/header"/>
+
+
+    <TextView
+        android:id="@+id/lbl_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="30dp"
+        android:text="@string/ajouter_une_question_text"
+        android:textColor="#6dffbf"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/et_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/question_text"
+        android:textAlignment="center"
+        android:textColor="#6bfff7"
+        android:textColorHint="#52afaa" />
+
+    <EditText
+        android:id="@+id/et_response1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/r_ponse_1_text"
+        android:textAlignment="center"
+        android:textColor="#6bfff7"
+        android:textColorHint="#52afaa" />
+
+    <EditText
+        android:id="@+id/et_response2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/r_ponse_2_text"
+        android:textAlignment="center"
+        android:textColor="#6bfff7"
+        android:textColorHint="#52afaa" />
+
+    <EditText
+        android:id="@+id/et_response3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/r_ponse_3_text"
+        android:textAlignment="center"
+        android:textColor="#6bfff7"
+        android:textColorHint="#52afaa" />
+
+    <EditText
+        android:id="@+id/et_response4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/r_ponse_4_text"
+        android:textAlignment="center"
+        android:textColor="#6bfff7"
+        android:textColorHint="#52afaa" />
+
+    <EditText
+        android:id="@+id/et_goodResponse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/num_ro_de_la_bonne_r_ponse"
+        android:textAlignment="center"
+        android:textColor="#6bfff7"
+        android:textColorHint="#52afaa" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="25dp">
+
+        <TextView
+            android:id="@+id/errorMessage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAlignment="center"
+            android:textColor="#FF0000"
+            tools:text="Error Message" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_submitQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10sp"
+        android:text="@string/ajouter"
+        android:textAllCaps="false" />
+
+</LinearLayout>

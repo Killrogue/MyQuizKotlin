@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#444444"
+    android:orientation="vertical"
+    android:padding="24sp"
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </ProgressBar>
+
+    <LinearLayout
+        android:id="@+id/layoutQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/Question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/question"
+            android:textSize="35sp"
+            android:textAlignment="center"
+            android:textColor="#6dffbf"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutResponses"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/response1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/r_ponse_1"/>
+
+        <Button
+            android:id="@+id/response2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/r_ponse_2"/>
+
+        <Button
+            android:id="@+id/response3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/r_ponse_3"/>
+
+        <Button
+            android:id="@+id/response4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/r_ponse_4"/>
+
+    </LinearLayout>
+
+</LinearLayout>
