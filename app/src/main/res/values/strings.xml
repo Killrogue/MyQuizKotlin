@@ -55,4 +55,8 @@
     <string name="leave">Quitter</string>
     <string name="voir_mon_profil">Voir mon profil</string>
     <string name="mes_derniers_scores">Mes derniers scores :</string>
+    <string name="modifier_mes_informations">Modifier mes informations</string>
+    <string name="modifier_adresse_email">Modifier Adresse Email</string>
+    <string name="mot_de_passe2">Mot de Passe :</string>
+    <string name="modifier_mot_de_passe">Modifier Mot de Passe</string>
 </resources>

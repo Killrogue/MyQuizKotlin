@@ -11,68 +11,162 @@
 
     <include layout="@layout/header"/>
 
-    <RelativeLayout
+    <ScrollView
+        android:id="@+id/root_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/persoInfos"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:text="@string/informations_personnelles"
-            android:textColor="#6dffbf" />
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/profileUserNameLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/persoInfos"
-            android:textColor="#52afaa"
-            android:layout_marginEnd="4sp"
-            android:text="@string/pseudo_profil" />
-        <TextView
-            android:id="@+id/profileUserName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#52afaa"
-            android:layout_toEndOf="@id/profileUserNameLabel"
-            android:layout_below="@id/persoInfos"
-            android:text="@string/pseudo"/>
+            <TextView
+                android:id="@+id/persoInfos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="@string/informations_personnelles"
+                android:textColor="#6dffbf" />
 
-        <TextView
-            android:id="@+id/profileUserEmailLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="4sp"
-            android:textColor="#52afaa"
-            android:layout_below="@id/profileUserNameLabel"
-            android:text="@string/adresse_email_profil"/>
-        <TextView
-            android:id="@+id/profileUserEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#52afaa"
-            android:layout_toEndOf="@id/profileUserEmailLabel"
-            android:layout_below="@id/profileUserNameLabel"
-            android:text="@string/email"/>
-        <TextView
-            android:id="@+id/scoreLabel"
-            android:textSize="20sp"
-            android:layout_marginTop="14sp"
-            android:textColor="#6dffbf"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/profileUserEmail"
-            android:text="@string/mes_derniers_scores"/>
+            <TextView
+                android:id="@+id/profileUserNameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/persoInfos"
+                android:textColor="#52afaa"
+                android:layout_marginEnd="4sp"
+                android:text="@string/pseudo_profil" />
+            <TextView
+                android:id="@+id/profileUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#52afaa"
+                android:layout_toEndOf="@id/profileUserNameLabel"
+                android:layout_below="@id/persoInfos"
+                android:text="@string/pseudo"/>
 
-        <ListView
-            android:id="@+id/listViewProfile"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/scoreLabel">
+            <TextView
+                android:id="@+id/profileUserEmailLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4sp"
+                android:textColor="#52afaa"
+                android:layout_below="@id/profileUserNameLabel"
+                android:text="@string/adresse_email_profil"/>
+            <TextView
+                android:id="@+id/profileUserEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#52afaa"
+                android:layout_toEndOf="@id/profileUserEmailLabel"
+                android:layout_below="@id/profileUserNameLabel"
+                android:text="@string/email"/>
 
-        </ListView>
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/scoreLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/profileUserEmail"
+                android:layout_marginTop="14sp"
+                android:text="@string/mes_derniers_scores"
+                android:textColor="#6dffbf"
+                android:textSize="20sp" />
+
+            <ListView
+                android:id="@+id/listViewProfile"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@id/scoreLabel"
+                tools:ignore="NestedScrolling">
+
+            </ListView>
+
+            <TextView
+                android:id="@+id/persoInfosModifLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14sp"
+                android:textSize="18sp"
+                android:layout_below="@id/listViewProfile"
+                android:text="@string/modifier_mes_informations"
+                android:textColor="#6dffbf" />
+
+            <TextView
+                android:id="@+id/profileEmailModifLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:layout_marginTop="10sp"
+                android:layout_below="@id/persoInfosModifLabel"
+                android:text="@string/adresse_email_profil"
+                android:textColor="#52afaa" />
+
+            <EditText
+                android:id="@+id/et_emailProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/profileEmailModifLabel"
+                android:textColor="#6bfff7"
+                android:textColorHint="#52afaa"
+                tools:ignore="Autofill,LabelFor,TextFields" />
+            <Button
+                android:id="@+id/btn_submitEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/et_emailProfile"
+                android:layout_marginBottom="10sp"
+                android:text="@string/modifier_adresse_email"
+                android:textAllCaps="false" />
+
+            <TextView
+                android:id="@+id/errorMessageEmail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/btn_submitEmail"
+                android:textAlignment="center"
+                android:textColor="#FF0000"
+                tools:text="Error Message" />
+
+            <TextView
+                android:id="@+id/profilePwdModifLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:textSize="14sp"
+                android:layout_below="@id/btn_submitEmail"
+                android:text="@string/mot_de_passe2"
+                android:textColor="#52afaa" />
+
+            <EditText
+                android:id="@+id/et_passwordProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/profilePwdModifLabel"
+                android:inputType="textPassword"
+                android:textColor="#6bfff7"
+                android:textColorHint="#52afaa"
+                tools:ignore="Autofill,LabelFor" />
+
+            <Button
+                android:id="@+id/btn_submitPwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/et_passwordProfile"
+                android:layout_marginBottom="10sp"
+                android:text="@string/modifier_mot_de_passe"
+                android:textAllCaps="false" />
+
+            <TextView
+                android:id="@+id/errorMessagePwd"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/btn_submitPwd"
+                android:textAlignment="center"
+                android:textColor="#FF0000"
+                tools:text="Error Message" />
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 </LinearLayout>

@@ -9,7 +9,7 @@ import android.widget.BaseAdapter
 import android.widget.TextView
 import com.google.firebase.firestore.DocumentSnapshot
 
-class ProfileAdapter(private val context: Context, private val documents : List<DocumentSnapshot>) : BaseAdapter(){
+class ProfileAdapter(context: Context, private val documents : List<DocumentSnapshot>) : BaseAdapter(){
 
     companion object {
         private var inflater: LayoutInflater? = null

@@ -1,6 +1,8 @@
 package com.epsi.myquiz
 
 import android.content.Intent
+import android.os.Bundle
+import android.os.PersistableBundle
 import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
@@ -22,6 +24,9 @@ open class BaseActivity : AppCompatActivity() {
     private lateinit var intentAdmin: Intent
     private lateinit var intentProfile: Intent
 
+    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
+        super.onCreate(savedInstanceState, persistentState)
+    }
     override fun onResume() {
         super.onResume()
 
@@ -68,15 +73,17 @@ open class BaseActivity : AppCompatActivity() {
             subscribe.visibility = View.GONE
             logOut.visibility = View.VISIBLE
             profile.visibility = View.VISIBLE
-            if (user!!.email == "admin@admin.fr" && user!!.displayName == "admin"){
+            if (user!!.email == "admin@admin.fr" && user!!.displayName == "admin")
                 admin.visibility = View.VISIBLE
-            }
+            else
+                admin.visibility = View.GONE
         } else {
             connection.visibility = View.VISIBLE
             subscribe.visibility = View.VISIBLE
             logOut.visibility = View.GONE
             profile.visibility = View.GONE
             admin.visibility = View.GONE
+
         }
     }
 }
@@ -84,8 +91,9 @@ open class BaseActivity : AppCompatActivity() {
 /**
  * Reste à faire :
  *
- * Possibilité de modifier son adresse mail et/ou son mot de passe
  * Possibilité de supprimer son compte -> suppréssion de toute les données de l'utilisateur
+ *
+ * inscription -> erreur si mail déja en base
  *
  * Améliorations possibles -> classement, possibilité de soumettre une question (joueur -> validation admin), différents packs de niveaux de questions
  * **/
