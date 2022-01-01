@@ -1,14 +1,20 @@
 package com.epsi.myquiz
 
 import android.annotation.SuppressLint
-import android.content.ContentValues
+import android.app.AlertDialog
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.text.InputType
 import android.util.Log
 import android.util.Patterns
 import android.widget.*
+import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+
+
+
 
 open class ProfileActivity : BaseActivity(){
     private lateinit var profileUserName : TextView
@@ -19,6 +25,7 @@ open class ProfileActivity : BaseActivity(){
     private lateinit var btnSubmitPwd : Button
     private lateinit var errorMessageEmail : TextView
     private lateinit var errorMessagePwd : TextView
+    private lateinit var btnDeleteAccount : Button
     private val db = Firebase.firestore
 
     @SuppressLint("SetTextI18n")
@@ -56,6 +63,10 @@ open class ProfileActivity : BaseActivity(){
             }else
                 errorMessagePwd.text = "Le mot de passe doit faire plus de 6 caractères"
         }
+
+        btnDeleteAccount.setOnClickListener {
+            deleteAccount()
+        }
     }
 
     private fun initialization(){
@@ -67,6 +78,7 @@ open class ProfileActivity : BaseActivity(){
         btnSubmitPwd = findViewById(R.id.btn_submitPwd)
         errorMessageEmail = findViewById(R.id.errorMessageEmail)
         errorMessagePwd = findViewById(R.id.errorMessagePwd)
+        btnDeleteAccount = findViewById(R.id.btn_deleteAccount)
     }
 
     override fun onResume() {
@@ -82,7 +94,46 @@ open class ProfileActivity : BaseActivity(){
                 }
             }
             .addOnFailureListener { exception ->
-                Log.d(ContentValues.TAG, "Error getting documents: ", exception)
+                Log.d(TAG, "Error getting documents: ", exception)
             }
     }
+
+     private fun deleteAccount() {
+         val builder = AlertDialog.Builder(this)
+         builder.setTitle(R.string.alert_dialog_delete_confirm)
+             .setMessage(R.string.alert_dialog_delete_msg)
+         val input = EditText(this)
+         input.hint = "Entrez votre mot de passe"
+         input.inputType = InputType.TYPE_TEXT_VARIATION_PASSWORD
+         builder.setView(input)
+         builder.setPositiveButton(R.string.comfirm
+             ) { _, _ ->
+                 val scoreData = db.collection("score")
+                 scoreData.whereEqualTo("user", user?.email).get()
+                     .addOnSuccessListener { result ->
+                     if(result != null){
+                         for (document in result.documents){
+                             db.collection("score").document(document.id).delete()
+                         }
+                     }
+                 }
+                 val credential = EmailAuthProvider
+                         .getCredential(user!!.email.toString(), input.text.toString())
+                 user!!.reauthenticate(credential)
+                     .addOnCompleteListener { task ->
+                     if (task.isSuccessful) {
+                         user!!.delete()
+                             .addOnCompleteListener { delete ->
+                                 if (delete.isSuccessful) {
+                                     Log.d(TAG, "User account deleted.")
+                                     finish()
+                                 }
+                             }
+                     }
+                 }
+             }
+             .setNegativeButton(R.string.cancel) { _, _ -> }
+         // Create the AlertDialog object and return it
+         builder.create().show()
+     }
 }

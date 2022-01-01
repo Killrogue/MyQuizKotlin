@@ -59,4 +59,10 @@
     <string name="modifier_adresse_email">Modifier Adresse Email</string>
     <string name="mot_de_passe2">Mot de Passe :</string>
     <string name="modifier_mot_de_passe">Modifier Mot de Passe</string>
+    <string name="supprimer_mon_compte">Supprimer mon compte</string>
+    <string name="comfirm">Confirmer</string>
+    <string name="cancel">Annuler</string>
+    <string name="alert_dialog_delete_confirm">Confirmation Suppression</string>
+    <string name="alert_dialog_delete_msg">Voulez vous vraiment supprimer votre compte ? (Toutes les informations liées à ce compte seront perdues)</string>
+    <string name="no_score">Aucun score à afficher</string>
 </resources>

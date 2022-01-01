@@ -17,7 +17,6 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import kotlin.properties.Delegates
@@ -151,7 +150,7 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
         }else{
             val db = Firebase.firestore
             val user = Firebase.auth.currentUser
-            val today = LocalDate.parse(LocalDateTime.now().toString(), DateTimeFormatter.ofPattern("dd-MM-yyyy")).toString()
+            val today = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
             val scoreUser = hashMapOf(
                 "user" to user!!.email,
                 "scoreUser" to score,

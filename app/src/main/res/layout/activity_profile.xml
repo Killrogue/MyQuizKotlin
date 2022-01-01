@@ -165,6 +165,18 @@
                 android:textColor="#FF0000"
                 tools:text="Error Message" />
 
+            <Button
+                android:id="@+id/btn_deleteAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_submitPwd"
+                android:layout_marginTop="40sp"
+                android:backgroundTint="#FF0000"
+                android:layout_alignParentEnd="true"
+                android:text="@string/supprimer_mon_compte"
+                android:textAllCaps="false"
+                android:textColor="#FFEB3B" />
+
         </RelativeLayout>
 
     </ScrollView>

@@ -91,9 +91,9 @@ open class BaseActivity : AppCompatActivity() {
 /**
  * Reste à faire :
  *
- * Possibilité de supprimer son compte -> suppréssion de toute les données de l'utilisateur
- *
- * inscription -> erreur si mail déja en base
+ * mettre des commentaires
+ * faire le pdf
+ * fini ! Enjoy yourself !
  *
  * Améliorations possibles -> classement, possibilité de soumettre une question (joueur -> validation admin), différents packs de niveaux de questions
  * **/
