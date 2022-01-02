@@ -20,9 +20,6 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import kotlin.properties.Delegates
 
-
-
-
 class QuizActivity : AppCompatActivity(), View.OnClickListener {
     private val db = Firebase.firestore
     private lateinit var progressBar: ProgressBar

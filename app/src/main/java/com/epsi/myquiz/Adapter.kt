@@ -78,15 +78,15 @@ class Adapter(private val context: Context, private val documents : List<Documen
             cv = inflater!!.inflate(R.layout.display_admin_questions, parent, false)
         }
         val holder = initHolder(cv!!)
-        holder.lblQuestion.text = (R.string.numberQuestion +(position+1)).toString()
+        holder.lblQuestion.text = "Question n°" + (position+1)
         holder.questions.text = documents[position].data?.getValue("question").toString()
-        holder.lblResponses.text = R.string.availableResponses.toString()
+        holder.lblResponses.text = "Réponses Disponibles :"
         val list : List<String> = documents[position].data?.getValue("responses") as List<String>
         holder.response1.text = list[0]
         holder.response2.text = list[1]
         holder.response3.text = list[2]
         holder.response4.text = list[3]
-        holder.lblgoodResponse.text = R.string.numberGoodResponse.toString()
+        holder.lblgoodResponse.text = "Numéro de la bonne réponse :"
         holder.goodResponses.text = documents[position].data?.getValue("goodResponse").toString() +
                                 " (" +
                                 list[(parseInt(documents[position].data?.getValue("goodResponse").toString())-1)] +

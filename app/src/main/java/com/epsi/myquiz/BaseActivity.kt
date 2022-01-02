@@ -82,13 +82,3 @@ open class BaseActivity : AppCompatActivity() {
         }
     }
 }
-
-/**
- * Reste à faire :
- *
- * mettre des commentaires
- * faire le pdf
- * fini ! Enjoy yourself !
- *
- * Améliorations possibles -> classement, possibilité de soumettre une question (joueur -> validation admin), différents packs de niveaux de questions
- * **/
