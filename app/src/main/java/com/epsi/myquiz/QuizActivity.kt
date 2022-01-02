@@ -2,7 +2,6 @@ package com.epsi.myquiz
 
 import android.app.AlertDialog
 import android.content.ContentValues
-import android.content.DialogInterface
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -55,15 +54,15 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
         val builder = AlertDialog.Builder(this)
         builder.setTitle(R.string.alert_dialog_title_back)
             .setMessage(R.string.alert_dialog_msg_back)
-            .setPositiveButton(R.string.yes,
-                DialogInterface.OnClickListener { _, _ ->
-                    score = 0
-                    finish()
-                })
-            .setNegativeButton(R.string.no,
-                DialogInterface.OnClickListener { _, _ ->
-                    Toast.makeText(this, "Canceled", Toast.LENGTH_LONG).show()
-                })
+            .setPositiveButton(R.string.yes
+            ) { _, _ ->
+                score = 0
+                finish()
+            }
+            .setNegativeButton(R.string.no
+            ) { _, _ ->
+                Toast.makeText(this, "Canceled", Toast.LENGTH_LONG).show()
+            }
         // Create the AlertDialog object and return it
         builder.create().show()
     }

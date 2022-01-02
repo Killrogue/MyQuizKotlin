@@ -65,4 +65,7 @@
     <string name="alert_dialog_delete_confirm">Confirmation Suppression</string>
     <string name="alert_dialog_delete_msg">Voulez vous vraiment supprimer votre compte ? (Toutes les informations liées à ce compte seront perdues)</string>
     <string name="no_score">Aucun score à afficher</string>
+    <string name="numberQuestion">"Question n° "</string>
+    <string name="availableResponses">Réponses Disponibles :</string>
+    <string name="numberGoodResponse">Numéro de la bonne réponse :</string>
 </resources>

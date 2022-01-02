@@ -3,7 +3,6 @@ package com.epsi.myquiz
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Context
-import android.content.DialogInterface
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +10,6 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.content.res.AppCompatResources
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.ktx.firestore
@@ -80,15 +78,15 @@ class Adapter(private val context: Context, private val documents : List<Documen
             cv = inflater!!.inflate(R.layout.display_admin_questions, parent, false)
         }
         val holder = initHolder(cv!!)
-        holder.lblQuestion.text = "Question n°"+(position+1)
+        holder.lblQuestion.text = (R.string.numberQuestion +(position+1)).toString()
         holder.questions.text = documents[position].data?.getValue("question").toString()
-        holder.lblResponses.text = "Réponses Disponibles :"
+        holder.lblResponses.text = R.string.availableResponses.toString()
         val list : List<String> = documents[position].data?.getValue("responses") as List<String>
         holder.response1.text = list[0]
         holder.response2.text = list[1]
         holder.response3.text = list[2]
         holder.response4.text = list[3]
-        holder.lblgoodResponse.text = "Numéro de la bonne réponse :"
+        holder.lblgoodResponse.text = R.string.numberGoodResponse.toString()
         holder.goodResponses.text = documents[position].data?.getValue("goodResponse").toString() +
                                 " (" +
                                 list[(parseInt(documents[position].data?.getValue("goodResponse").toString())-1)] +
@@ -104,18 +102,15 @@ class Adapter(private val context: Context, private val documents : List<Documen
                             val builder = AlertDialog.Builder(context)
                             builder.setTitle(R.string.alert_dialog_title)
                                 .setMessage(R.string.alert_dialog_msg)
-                                .setPositiveButton(R.string.yes,
-                                    DialogInterface.OnClickListener { _, _ ->
-                                        Toast.makeText(context, "Yes selected", Toast.LENGTH_LONG).show()
-                                        db.collection("quiz").document(documents[position].id)
-                                            .delete()
-                                        activity.reload()
-                                    })
-                                .setNegativeButton(R.string.no,
-                                    DialogInterface.OnClickListener { _, _ ->
-                                        Toast.makeText(context, "Canceled", Toast.LENGTH_LONG).show()
-                                    })
-                        // Create the AlertDialog object and return it
+                                .setPositiveButton(R.string.yes
+                                ) { _, _ ->
+                                    db.collection("quiz").document(documents[position].id)
+                                        .delete()
+                                    activity.reload()
+                                }
+                                .setNegativeButton(R.string.no
+                                ) { _, _ -> }
+            // Create the AlertDialog object and return it
                         builder.create().show()
                         }
         return cv

@@ -6,18 +6,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
-import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.ListView
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 class AdminActivity : BaseActivity(){
     private val db = Firebase.firestore
-    private lateinit var quizLayout: LinearLayout
-    private lateinit var edit: ImageView
-    private lateinit var delete: ImageView
-
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,6 +25,7 @@ class AdminActivity : BaseActivity(){
             }
         }
     }
+
     fun reload() {
         finish()
         overridePendingTransition(0, 0)
@@ -40,6 +35,7 @@ class AdminActivity : BaseActivity(){
 
     override fun onResume() {
         super.onResume()
+        // Display all the questions in the db
         val quizData = db.collection("quiz")
         quizData.get()
             .addOnSuccessListener { result ->

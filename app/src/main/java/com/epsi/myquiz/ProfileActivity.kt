@@ -13,9 +13,6 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
-
-
-
 open class ProfileActivity : BaseActivity(){
     private lateinit var profileUserName : TextView
     private lateinit var profileUserEmail : TextView
